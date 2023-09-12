@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">GeoQuiz</string>
-    <string name="question_australia">Canberra is the capital of Australia.</string>
-    <string name="question_oceans">The Pacific Ocean is larger than the Atlantic Ocean.</string>
-    <string name="question_mideast">The Suez Canal connects the Red Sea and the Indian Ocean.</string>
-    <string name="question_africa">The source of the Nile River is in Egypt.</string>
-    <string name="question_americas">The Amazon River is the longest river in the Americas.</string>
-    <string name="question_asia">Lake Baikal is the world\'s oldest and deepest freshwater lake.</string>
+    <string name="question_china">China has the greatest altitude difference on Earth.</string>
+    <string name="question_russia">Russia occupies a fifth of the world\'s landmass.</string>
+    <string name="question_antarctica">Antarctica has over 90% of the world\'s surface water in its ice.</string>
+    <string name="question_india">India is the seventh largest country in the world.</string>
+    <string name="question_japan">Japan has five main islands: Hokkaido, Honshu, Shikoku, Kyushu, and Tsuyaka.</string>
+    <string name="question_france">France\'s longest river is the Chardonette, at over 1000 km long.</string>
+    <string name="question_canada">Canada has the longest coastline in the world.</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
     <string name="next_button">Next</string>
+    <string name="back_button">Prev</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
     <string name="warning_text">Are you sure you want to do this?</string>

@@ -9,12 +9,13 @@ const val CURRENT_INDEX_KEY = "CURRENT_INDEX_KEY"
 class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel() {
 
     private val questionBank = listOf(
-        Question(R.string.question_australia, true),
-        Question(R.string.question_oceans, true),
-        Question(R.string.question_mideast, false),
-        Question(R.string.question_africa, false),
-        Question(R.string.question_americas, true),
-        Question(R.string.question_asia, true)
+        Question(R.string.question_china, true),
+        Question(R.string.question_russia, false),
+        Question(R.string.question_antarctica, true),
+        Question(R.string.question_india, true),
+        Question(R.string.question_japan, false),
+        Question(R.string.question_france, false),
+        Question(R.string.question_canada, true)
     )
 
     private var currentIndex: Int
@@ -29,5 +30,12 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
 
     fun moveToNext() {
         currentIndex = (currentIndex + 1) % questionBank.size
+    }
+
+    fun moveToPrev() {
+        currentIndex = (currentIndex - 1) % questionBank.size
+        if (currentIndex < 0){
+            currentIndex += questionBank.size;
+        }
     }
 }
