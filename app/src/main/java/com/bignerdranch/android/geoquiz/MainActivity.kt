@@ -83,18 +83,38 @@ class MainActivity : AppCompatActivity() {
     private fun updateQuestion() {
         val questionTextResId = quizViewModel.currentQuestionText
         binding.questionTextView.setText(questionTextResId)
+        binding.trueButton.isEnabled = quizViewModel.currentQuestionUserAnswer == -1;
+        binding.falseButton.isEnabled = quizViewModel.currentQuestionUserAnswer == -1;
     }
 
     private fun checkAnswer(userAnswer: Boolean) {
         val correctAnswer = quizViewModel.currentQuestionAnswer
-
+        if(quizViewModel.currentQuestionUserAnswer != -1)
+        {
+            Toast.makeText(this, R.string.answer_warning_text, Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+        quizViewModel.updateUserAnswer(userAnswer)
         val messageResId = if (userAnswer == correctAnswer) {
             R.string.correct_toast
         } else {
             R.string.incorrect_toast
         }
 
+        if(userAnswer == correctAnswer) {
+            quizViewModel.changeScore(1);
+        }
+
+        updateQuestion()
+
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
             .show()
+
+        if(quizViewModel.isFinished()){
+            val messageEndId = "You scored %" + quizViewModel.percentage + "!"
+            Toast.makeText(this, messageEndId, Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 }
